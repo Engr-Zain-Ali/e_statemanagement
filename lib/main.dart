@@ -39,6 +39,7 @@ import 'package:e_statemanagement/e_statemanagement.dart';
 import 'package:e_statemanagement/example_2.dart';
 import 'package:e_statemanagement/favourit_screen.dart';
 import 'package:e_statemanagement/theme_changer.dart';
+import 'package:e_statemanagement/value_notify_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -64,6 +65,7 @@ class MyApp extends StatelessWidget {
       child:Builder(builder: (BuildContext context){
         final themeChanger=Provider.of<ThemeChanger>(context);
         return  MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           themeMode:themeChanger.themeMode,
           theme: ThemeData(
@@ -74,7 +76,7 @@ class MyApp extends StatelessWidget {
           darkTheme: ThemeData(
             brightness: Brightness.dark,
           ),
-          home: Dark_Theme(),
+          home:NotifyListener(),
 
         );
       }),
